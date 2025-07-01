@@ -7,10 +7,25 @@ Simple Flask API for AWS learning.
 ```bash
 git clone <repository-url>
 cd aws-three-tier-backend
-pip3 install -r requirements.txt
+
+# Create virtual environment
+python3 -m venv venv
+
+# Activate virtual environment
+# Linux/macOS:
+source venv/bin/activate
+# Windows:
+venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Setup environment
 cp .env.example .env
 # Edit .env with your RDS details
-python3 app.py
+
+# Run application
+python app.py
 ```
 
 ## Test API

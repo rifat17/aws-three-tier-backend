@@ -33,3 +33,7 @@ curl http://your-ec2-ip:5000/api/data
 1. **RDS MySQL** - Create database
 2. **EC2** - Run this Flask app
 3. **Security Groups** - Allow port 5000
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.

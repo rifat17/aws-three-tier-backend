@@ -43,9 +43,34 @@ curl -X POST http://your-ec2-ip:5000/api/add-message \
 curl http://your-ec2-ip:5000/api/data
 ```
 
+## Database Setup
+
+### Option 1: Using MySQL Client
+
+Install MySQL client:
+```bash
+# Ubuntu/Debian
+sudo apt install mysql-client
+
+# Amazon Linux/RHEL
+sudo yum install mysql
+
+# macOS
+brew install mysql-client
+```
+
+Run schema:
+```bash
+mysql -h your-rds-endpoint -u admin -p < database/schema.sql
+```
+
+### Option 2: Copy-paste SQL commands
+
+Connect to RDS using any MySQL tool and run the commands from `database/schema.sql`
+
 ## AWS Setup
 
-1. **RDS MySQL** - Create database
+1. **RDS MySQL** - Create database using schema.sql
 2. **EC2** - Run this Flask app
 3. **Security Groups** - Allow your configured port (default: 5000)
 

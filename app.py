@@ -13,6 +13,7 @@ DB_HOST = os.environ.get('DB_HOST', 'localhost')
 DB_NAME = os.environ.get('DB_NAME', 'mydatabase')
 DB_USER = os.environ.get('DB_USER', 'appuser')
 DB_PASS = os.environ.get('DB_PASS', 'password')
+PORT = int(os.environ.get('PORT', 5000))
 
 def get_db_connection():
     return pymysql.connect(host=DB_HOST, database=DB_NAME, user=DB_USER, password=DB_PASS)
@@ -48,6 +49,6 @@ def home():
     return "AWS Backend is running!"
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=PORT)
 
     

@@ -68,6 +68,23 @@ mysql -h your-rds-endpoint -u admin -p < database/schema.sql
 
 Connect to RDS using any MySQL tool and run the commands from `database/schema.sql`
 
+## Production Deployment
+
+For production deployment with auto-restart:
+
+```bash
+# Copy service file
+sudo cp deployment/aws-backend.service /etc/systemd/system/
+
+# Enable and start service
+sudo systemctl daemon-reload
+sudo systemctl enable aws-backend
+sudo systemctl start aws-backend
+
+# Check status
+sudo systemctl status aws-backend
+```
+
 ## AWS Setup
 
 1. **RDS MySQL** - Create database using schema.sql

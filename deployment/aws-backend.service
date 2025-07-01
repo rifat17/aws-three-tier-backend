@@ -1,0 +1,15 @@
+[Unit]
+Description=AWS Three-Tier Backend Flask Application
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/aws-three-tier-backend
+Environment=PATH=/home/ubuntu/aws-three-tier-backend/venv/bin
+ExecStart=/home/ubuntu/aws-three-tier-backend/venv/bin/python app.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
